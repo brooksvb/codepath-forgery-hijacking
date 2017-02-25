@@ -6,7 +6,7 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-1\. [ ]  Required: Test for initial vulnerabilities
+1\. [x]  Required: Test for initial vulnerabilities
 
 2\. [ ]  Required: Configure sessions
   * [ ]  Required: Only allow session IDs to come from cookies
