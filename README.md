@@ -14,8 +14,8 @@ The following **required** functionality is completed:
   * [x]  Required: Use cookies which are marked as HttpOnly
 
 3\. [ ]  Required: Complete Login page.
-  * [ ]  Required: Show an error message when username is not found.
-  * [ ]  Required: Show an error message when username is found but password does not match.
+  * [x]  Required: Show an error message when username is not found.
+  * [x]  Required: Show an error message when username is found but password does not match.
   * [ ]  Required: After login, store user ID in session data.
   * [ ]  Required: After login, store user last login time in session data.
   * [ ]  Required: Regenerate the session ID at the appropriate point.

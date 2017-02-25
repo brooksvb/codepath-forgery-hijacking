@@ -5,7 +5,6 @@
 ob_start();
 
 // Enable sessions
-// TODO add configurations
 session_start([
   "cookie_httponly" => true,   // Can't be accessed by JS
   "use_only_cookies" => true,   // Session can't be passed through URL
