@@ -52,9 +52,9 @@ The following advanced user stories are optional:
   * [ ]  Identify the security principal not being followed.
   * [ ]  Write a short description of how the code could be modified to be more secure.
 
-* [ ] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
+* [x] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
 
-* [ ]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
+* [x]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
 
 * [ ]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
 
@@ -92,4 +92,3 @@ Describe any challenges encountered while building the app.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-0

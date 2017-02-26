@@ -21,14 +21,16 @@
   function csrf_token_is_valid() {
     if(!isset($_POST['csrf_token'])) { return false; }
     if(!isset($_SESSION['csrf_token'])) { return false; }
-    return ($_POST['csrf_token'] === $_SESSION['csrf_token']);
+    return ($_POST['csrf_token'] === $_SESSION['csrf_token']
+            && csrf_token_is_recent());
   }
 
   // Determines if the form token should be considered "recent"
   // by comparing it to the time a token was last generated.
   function csrf_token_is_recent() {
-    // TODO add code to determine if csrf token is recent
-    return true;
+    $time_limit = 60 * 60 * 10; // Time limit: 10 minutes
+    // We can be sure that 'csrf_token' is set, because the previous function checked
+    return ($_POST['csrf_token'] + $time_limit) >= time();
   }
 
 ?>
