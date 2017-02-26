@@ -48,9 +48,17 @@ The following **required** functionality is completed:
 
 The following advanced user stories are optional:
 
-* [ ]  Bonus Objective 1: Identify security flaw in Objective #4 (requiring login on staff pages)
-  * [ ]  Identify the security principal not being followed.
-  * [ ]  Write a short description of how the code could be modified to be more secure.
+* [x]  Bonus Objective 1: Identify security flaw in Objective #4 (requiring login on staff pages)
+  * [x]  Identify the security principal not being followed.
+  * [x]  Write a short description of how the code could be modified to be more secure.
+
+  I believe any potentially harmful functionality, such as updating information
+  or creating new entries, should require a user to log in again to re-verify identity.
+  The Never Trust Users principle applies here, because someone could potentially
+  gain access to the site on a legitimate users' computer while they are away.
+
+  For these pages, a simple way to implement this is to require the login cookie's
+  age to be less than a very short time, like 1-2 minutes.
 
 * [x] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
 
