@@ -10,7 +10,6 @@
     $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
   }
 
-  return true;
   // A one-step function to destroy the current session
   function destroy_current_session() {
     session_unset();
