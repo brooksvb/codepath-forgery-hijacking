@@ -24,8 +24,8 @@ The following **required** functionality is completed:
   * [x]  Required: Add a login requirement to *almost all* staff area pages.
   * [x]  Required: Write code for `last_login_is_recent()`.
 
-5\. [ ]  Required: Complete Logout page.
-  * [ ]  Required: Add code to destroy the user's session file after logging out.
+5\. [x]  Required: Complete Logout page.
+  * [x]  Required: Add code to destroy the user's session file after logging out.
 
 6\. [ ]  Required: Add CSRF protections to the state forms.
   * [ ]  Required: Create a CSRF token.
