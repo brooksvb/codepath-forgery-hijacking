@@ -27,17 +27,17 @@ The following **required** functionality is completed:
 5\. [x]  Required: Complete Logout page.
   * [x]  Required: Add code to destroy the user's session file after logging out.
 
-6\. [ ]  Required: Add CSRF protections to the state forms.
-  * [ ]  Required: Create a CSRF token.
-  * [ ]  Required: Add CSRF tokens to forms.
-  * [ ]  Required: Compare tokens against the stored version of the token.
-  * [ ]  Required: Only process forms data sent by POST requests.
-  * [ ]  Required: Confirm request referer is from the same domain as the host.
-  * [ ]  Required: Store the CSRF token in the user's session.
-  * [ ]  Required: Add the same CSRF token to the login form as a hidden input.
-  * [ ]  Required: When submitted, confirm that session and form tokens match.
-  * [ ]  Required: If tokens do not match, show an error message.
-  * [ ]  Required: Make sure that a logged-in user can use pages as expected.
+6\. [x]  Required: Add CSRF protections to the state forms.
+  * [x]  Required: Create a CSRF token.
+  * [x]  Required: Add CSRF tokens to forms.
+  * [x]  Required: Compare tokens against the stored version of the token.
+  * [x]  Required: Only process forms data sent by POST requests.
+  * [x]  Required: Confirm request referer is from the same domain as the host.
+  * [x]  Required: Store the CSRF token in the user's session.
+  * [x]  Required: Add the same CSRF token to the login form as a hidden input.
+  * [x]  Required: When submitted, confirm that session and form tokens match.
+  * [x]  Required: If tokens do not match, show an error message.
+  * [x]  Required: Make sure that a logged-in user can use pages as expected.
 
 7\. [ ]  Required: Ensure the application is not vulnerable to XSS attacks.
 
