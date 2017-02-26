@@ -16,17 +16,20 @@ $state = array(
 );
 
 if(is_post_request()) {
+  if (csrf_token_is_valid()) {
+    // Confirm that values are present before accessing them.
+    if(isset($_POST['name'])) { $state['name'] = $_POST['name']; }
+    if(isset($_POST['code'])) { $state['code'] = $_POST['code']; }
 
-  // Confirm that values are present before accessing them.
-  if(isset($_POST['name'])) { $state['name'] = $_POST['name']; }
-  if(isset($_POST['code'])) { $state['code'] = $_POST['code']; }
-
-  $result = insert_state($state);
-  if($result === true) {
-    $new_id = db_insert_id($db);
-    redirect_to('show.php?id=' . $new_id);
+    $result = insert_state($state);
+    if($result === true) {
+      $new_id = db_insert_id($db);
+      redirect_to('show.php?id=' . $new_id);
+    } else {
+      $errors = $result;
+    }
   } else {
-    $errors = $result;
+    $errors[] = 'Invalid request.';
   }
 }
 ?>
@@ -41,6 +44,7 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="new.php?id=<?php echo h($state['country_id']); ?>" method="post">
+    <?php echo csrf_token_tag(); ?>
     Name:<br />
     <input type="text" name="name" value="<?php echo h($state['name']); ?>" /><br />
     Code:<br />

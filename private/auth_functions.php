@@ -18,7 +18,7 @@
 
   // Performs all actions necessary to log out a user
   function log_out_user() {
-    unset($_SESSION['user_id']);
+    unset($_SESSION['user_id']); // Why do we do this if we destroy the session anyways?
     destroy_current_session();
     return true;
   }

@@ -13,19 +13,22 @@ $salesperson = array(
 );
 
 if(is_post_request()) {
+  if (csrf_token_is_valid()) {
+    // Confirm that values are present before accessing them.
+    if(isset($_POST['first_name'])) { $salesperson['first_name'] = $_POST['first_name']; }
+    if(isset($_POST['last_name'])) { $salesperson['last_name'] = $_POST['last_name']; }
+    if(isset($_POST['phone'])) { $salesperson['phone'] = $_POST['phone']; }
+    if(isset($_POST['email'])) { $salesperson['email'] = $_POST['email']; }
 
-  // Confirm that values are present before accessing them.
-  if(isset($_POST['first_name'])) { $salesperson['first_name'] = $_POST['first_name']; }
-  if(isset($_POST['last_name'])) { $salesperson['last_name'] = $_POST['last_name']; }
-  if(isset($_POST['phone'])) { $salesperson['phone'] = $_POST['phone']; }
-  if(isset($_POST['email'])) { $salesperson['email'] = $_POST['email']; }
-
-  $result = insert_salesperson($salesperson);
-  if($result === true) {
-    $new_id = db_insert_id($db);
-    redirect_to('show.php?id=' . $new_id);
+    $result = insert_salesperson($salesperson);
+    if($result === true) {
+      $new_id = db_insert_id($db);
+      redirect_to('show.php?id=' . $new_id);
+    } else {
+      $errors = $result;
+    }
   } else {
-    $errors = $result;
+    $errors[] = 'Invalid request.';
   }
 }
 ?>
@@ -40,6 +43,7 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="new.php" method="post">
+    <?php echo csrf_token_tag(); ?>
     First name:<br />
     <input type="text" name="first_name" value="<?php echo h($salesperson['first_name']); ?>" /><br />
     Last name:<br />
