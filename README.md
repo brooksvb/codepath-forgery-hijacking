@@ -20,9 +20,9 @@ The following **required** functionality is completed:
   * [x]  Required: After login, store user last login time in session data.
   * [x]  Required: Regenerate the session ID at the appropriate point.
 
-4\. [ ]  Required: Require login to access staff area pages.
-  * [ ]  Required: Add a login requirement to *almost all* staff area pages.
-  * [ ]  Required: Write code for `last_login_is_recent()`.
+4\. [x]  Required: Require login to access staff area pages.
+  * [x]  Required: Add a login requirement to *almost all* staff area pages.
+  * [x]  Required: Write code for `last_login_is_recent()`.
 
 5\. [ ]  Required: Complete Logout page.
   * [ ]  Required: Add code to destroy the user's session file after logging out.
